@@ -1,7 +1,7 @@
 import React from "react";
 import {Item} from "../../../types";
 
-const Input = ({item}: {item: Item}) => {
+const Input = ({item, edit}: {item: Item; edit: boolean}) => {
   return (
     <>
       {item.id === 9 ? (
@@ -10,7 +10,7 @@ const Input = ({item}: {item: Item}) => {
         <input
           placeholder={item.subtitle + "..."}
           name={item.title}
-          className="w-full h-[70%]"
+          className={`${edit ? "p-2 w-full h-full" : "w-full h-[100%] "}`}
         />
       )}
     </>

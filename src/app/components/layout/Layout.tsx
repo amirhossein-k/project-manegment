@@ -2,20 +2,20 @@ import {cn} from "../../../../utils/cn";
 
 import {cva, type VariantProps} from "class-variance-authority";
 
-const variants = cva(
-  " border-r-2 w-[100%]  flex items-center justify-center border-2 ",
-  {
-    variants: {
-      size: {
-        price: "col-span-2 ",
-        noprice: "",
-      },
+const variants = cva("  ", {
+  variants: {
+    size: {
+      price:
+        "col-span-2 w-[100%] border-r-2   flex items-center justify-center border-2 h-full ",
+      noprice:
+        "w-[100%] border-r-2   flex items-center justify-center border-2 h-full ",
+      form: " flex-row gap-2 py-3 px-2",
     },
-    defaultVariants: {
-      size: "price",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: "price",
+  },
+});
 
 type GridItemProps = {children: React.ReactNode} & VariantProps<
   typeof variants
