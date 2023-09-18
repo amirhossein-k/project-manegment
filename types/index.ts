@@ -31,6 +31,21 @@ export interface List {
   createAt: any;
   updateAt: any;
 }
+//
+export interface prodcutItemList {
+  title: string;
+  subtitle: string;
+  id: string;
+  createAt: any;
+  updateAt: any;
+  owerId: string | null;
+}
+export interface ListGet {
+  list: prodcutItemList[];
+  id: string;
+  createAt: any;
+  updateAt: any;
+}
 
 export const headerr = [
   {subtitle: "ماشین", id: 1, title: "car"},

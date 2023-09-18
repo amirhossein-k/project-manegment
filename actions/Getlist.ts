@@ -1,9 +1,9 @@
 import prisma from "@/db/prismaDb";
-import {Item, List, prodcutItem} from "../types";
+import {Item, List, ListGet, prodcutItem} from "../types";
 
 export const GetList = async () => {
   try {
-    const list: List[] = await prisma.product.findMany({
+    const list: ListGet[] = await prisma.product.findMany({
       include: {
         list: true,
       },
