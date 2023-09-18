@@ -33,7 +33,7 @@ export async function GET(req: Request) {
       },
     },
   });
-
+  //
   if (product) {
     var sodTotla = 0;
     var komTotla = 0;
