@@ -39,7 +39,7 @@ export async function GET(req: Request) {
     var komTotla = 0;
     var saleTotla = 0;
     var buyTotla = 0;
-    product?.map((item) => {
+    product.map((item: any) => {
       if (item.title === "sod") {
         sodTotla += Number(item.subtitle);
       } else if (item.title === "kom") {
