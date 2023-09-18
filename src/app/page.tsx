@@ -4,7 +4,7 @@ import {Item, List, headerr} from "../../types";
 import {useRouter} from "next/navigation";
 import numberFormat from "number-formatierer";
 import ParentButton from "./components/buttons/ParentButton";
-import {useEffect, useState} from "react";
+import {memo, useCallback, useEffect, useMemo, useState} from "react";
 import {GetList} from "../../utils/Product/Getlist";
 import axios from "axios";
 import {ToastContainer, toast} from "react-toastify";
@@ -26,9 +26,32 @@ export default function Home() {
     const pro = await axios.get("/api/product");
     return pro;
   };
-  // useEffect(() => {
 
-  // }, [pre])
+  const fif = (item: string) => {
+    switch (item.length) {
+      case 4:
+        return "هزار";
+      case 5:
+        return "هزار";
+      case 6:
+        return "هزار";
+      case 7:
+        return "میلیون";
+      case 8:
+        return "میلیون";
+      case 9:
+        return "میلیون";
+      case 10:
+        return "میلیارد";
+      case 11:
+        return "میلیارد";
+      case 12:
+        return "میلیارد";
+      default: {
+        return "";
+      }
+    }
+  };
 
   useEffect(() => {
     // setPre(false);
@@ -63,7 +86,7 @@ export default function Home() {
     myPromise
 
       .then((repo: any) => {
-        console.log(repo.data);
+        // console.log(repo.data);
         setRepo(repo.data);
       })
 
@@ -85,7 +108,6 @@ export default function Home() {
       },
       success: {
         render({data}: any) {
-          console.log(data);
           setPre(!pre);
           return data.data.message;
         },
@@ -99,7 +121,6 @@ export default function Home() {
       },
     });
   };
-  console.log(edit, "edit");
 
   const onSubmit = async (e: FormData, id: string) => {
     const car = e.get("car");
@@ -212,9 +233,14 @@ export default function Home() {
                       item.title === "sod" ? (
                       <Layout size={"price"} key={item.title}>
                         {item.subtitle ? (
-                          <> {numberFormat(item.subtitle)} میلیون</>
+                          <>
+                            {numberFormat(item.subtitle)}
+                            {fif(item.subtitle)}
+
+                            {/* <ShippingForm item={item.subtitle} /> */}
+                          </>
                         ) : (
-                          <p></p>
+                          <p> </p>
                         )}
                       </Layout>
                     ) : (
