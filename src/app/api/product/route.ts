@@ -45,6 +45,8 @@ export async function GET(req: Request) {
 
       // },
       select: {
+        id: true,
+
         list: true,
         time: false,
       },

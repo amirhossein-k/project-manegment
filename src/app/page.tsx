@@ -63,6 +63,7 @@ export default function Home() {
     myPromise
 
       .then((repo: any) => {
+        console.log(repo.data);
         setRepo(repo.data);
       })
 
