@@ -35,11 +35,11 @@ export async function GET(req: Request) {
   });
 
   if (product) {
-    let sodTotla = 0;
-    let komTotla = 0;
-    let saleTotla = 0;
-    let buyTotla = 0;
-    product.map((item) => {
+    var sodTotla = 0;
+    var komTotla = 0;
+    var saleTotla = 0;
+    var buyTotla = 0;
+    product?.map((item) => {
       if (item.title === "sod") {
         sodTotla += Number(item.subtitle);
       } else if (item.title === "kom") {
