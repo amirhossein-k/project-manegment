@@ -1,6 +1,6 @@
 "use client";
 import Layout from "./components/layout/Layout";
-import {Item, List} from "../../types";
+import {Item, List, headerr} from "../../types";
 import {useRouter} from "next/navigation";
 import numberFormat from "number-formatierer";
 import ParentButton from "./components/buttons/ParentButton";
@@ -14,18 +14,6 @@ import Header from "./components/header/Header";
 import Add from "./components/add/Add";
 import DefultBody from "./components/defaultBody/DefultBody";
 import Link from "next/link";
-export const header = [
-  {subtitle: "ماشین", id: 1, title: "car"},
-  {subtitle: "مدل", id: 2, title: "model"},
-  {subtitle: "بدنه", id: 3, title: "body"},
-  {subtitle: "ویژگی", id: 4, title: "prope"},
-  {subtitle: "شراکتی", id: 5, title: "som"},
-  {subtitle: "خرید", id: 6, title: "buy"},
-  {subtitle: "فروش", id: 7, title: "sale"},
-  {subtitle: "کومیسیون", id: 8, title: "kom"},
-  {subtitle: "سود", id: 9, title: "sod"},
-  {subtitle: "ادیت", id: 10, title: "edite"},
-];
 
 export default function Home() {
   const [repo, setRepo] = useState<List[]>();
@@ -203,7 +191,7 @@ export default function Home() {
       <ToastContainer autoClose={2000} />
       <div className="grid  grid-flow-row auto-rows-min  border-2   gap-1    h-full min-h-screen   w-[99%] p-2">
         <ul className="  grid   auto-rows-[40px] row-span-full  border-2  col-span-13 grid-flow-col bg-gray-300  auto-cols-[150px]  gap-2  w-fit  ">
-          {header.map((item) => {
+          {headerr.map((item) => {
             return <Header item={item} />;
           })}
         </ul>
@@ -254,7 +242,7 @@ export default function Home() {
                           item.title === "kom" ||
                           item.title === "sod" ? (
                             <Layout size={"form"} key={item.title}>
-                              {header.map((er) => {
+                              {headerr.map((er) => {
                                 return (
                                   <label htmlFor="" key={er.id + "e2"}>
                                     {er.title === item.title && er.subtitle}
@@ -265,7 +253,7 @@ export default function Home() {
                             </Layout>
                           ) : (
                             <Layout size={"form"} key={item.id}>
-                              {header.map((er) => {
+                              {headerr.map((er) => {
                                 return (
                                   <label
                                     htmlFor=""
@@ -333,7 +321,7 @@ export default function Home() {
               className="col-span-full grid grid-flow-col auto-cols-[150px] gap-2 border-2 bg-slate-300"
               action={(e) => onSubmit(e, edit.id)}
             >
-              {header.map((item) => {
+              {headerr.map((item) => {
                 return <Add item={item} />;
               })}
             </form>

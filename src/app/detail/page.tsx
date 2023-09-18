@@ -5,8 +5,8 @@ import PersianDatePicker from "@skhazaei/persian-date-picker";
 import {useState, useEffect} from "react";
 import axios from "axios";
 import {toast, ToastContainer} from "react-toastify";
-import {List} from "../../../types";
-import {header} from "../page";
+import {List, headerr} from "../../../types";
+
 export interface Total {
   subtitle: string;
   title: string;
@@ -19,12 +19,6 @@ const page = () => {
   const [repo, setRepo] = useState<List[]>();
   const [repo2, setRepo2] = useState<Total[]>();
 
-  const itemTotal = [
-    {title: "buy"},
-    {title: "sale"},
-    {title: "sod"},
-    {title: "kom"},
-  ];
   //
   const gett1 = async (dataa: any) => {
     const pro = await axios.post("/api/product/get", {dataa});
@@ -215,7 +209,7 @@ const page = () => {
                         key={ite.id}
                       >
                         <span className="text-red-800 font-semibold text-lg">
-                          {header[index].subtitle}:
+                          {headerr[index].subtitle}:
                         </span>
                         <span> {ite.subtitle}</span>
                       </div>

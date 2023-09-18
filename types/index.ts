@@ -31,3 +31,16 @@ export interface List {
   createAt: any;
   updateAt: any;
 }
+
+export const headerr = [
+  {subtitle: "ماشین", id: 1, title: "car"},
+  {subtitle: "مدل", id: 2, title: "model"},
+  {subtitle: "بدنه", id: 3, title: "body"},
+  {subtitle: "ویژگی", id: 4, title: "prope"},
+  {subtitle: "شراکتی", id: 5, title: "som"},
+  {subtitle: "خرید", id: 6, title: "buy"},
+  {subtitle: "فروش", id: 7, title: "sale"},
+  {subtitle: "کومیسیون", id: 8, title: "kom"},
+  {subtitle: "سود", id: 9, title: "sod"},
+  {subtitle: "ادیت", id: 10, title: "edite"},
+];
