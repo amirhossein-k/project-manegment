@@ -27,6 +27,7 @@ const page = () => {
   };
   return (
     <form
+      dir="rtl"
       action={onLogin}
       className="flex justify-center items-center gap-3 flex-col  w-screen h-screen bg-slate-800"
     >
@@ -34,7 +35,7 @@ const page = () => {
       <input
         name="name"
         type="text"
-        className="rounded p-2"
+        className="rounded p-2 w-[40%]"
         placeholder="اسمی که بهت گفتمو واردکن"
       />
       <button type="submit" className="bg-sky-400 px-3 py-2 rounded">
