@@ -24,7 +24,7 @@
     "num2persian": "^3.2.2",
     "number-formatierer": "^1.0.2",
     "persian-datepicker": "^1.2.0",
-    "postcss": "8.4.29",
+    "postcss": "8.4.31",
     "prisma": "^5.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
