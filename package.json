@@ -20,7 +20,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "mongoose": "^7.5.2",
-    "next": "13.4.19",
+    "next": "13.5.0",
     "num2persian": "^3.2.2",
     "number-formatierer": "^1.0.2",
     "persian-datepicker": "^1.2.0",
